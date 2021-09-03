@@ -29,7 +29,7 @@ export default function Menu() {
       <MenuWrapper.CenterSide>
         {links.map((link) => {
           return(
-            <li key={"key"}>
+            <li key={"link.url"}>
               <Text variant="smallestException" tag="a" href={link.url}>
                 {link.text}
               </Text>
