@@ -1,7 +1,7 @@
 import styled, {css} from "styled-components";
 import get from 'lodash/get'
 import { TextStyleVariants } from '../../foundation/Text';
-import { breackpointsMedia } from "../../../theme/utils/breakpointsMedia";
+import { breakpointsMedia } from "../../../theme/utils/breakpointsMedia";
 
 const ButtonGhost = css `
   background: transparent;
@@ -30,7 +30,7 @@ export const Button = styled.button`
     opacity: 0.5;
   }
 
-  ${breackpointsMedia({
+  ${breakpointsMedia({
     xs: css`
       ${TextStyleVariants.smallestException}
     `,
