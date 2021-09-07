@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
-import { breakpointsMedia } from '../../../../theme/utils/breakpointsMedia';
+import breakpointsMedia from '../../../../theme/utils/breakpointsMedia';
+import propToStyle from '../../../../theme/utils/propToStyle';
 
 const Container = styled.div`
     width: 100%;
@@ -8,31 +9,34 @@ const Container = styled.div`
     margin-right: auto;
     margin-left: auto;
     ${breakpointsMedia({
-  xs: css`
+    xs: css`
       max-width: initial;
     `,
-  sm: css`
+    sm: css`
       max-width: 576px; 
     `,
-  md: css`
+    md: css`
       max-width: 768px;
       padding-right: 16px;
       padding-left: 16px; 
     `,
-  lg: css`
+    lg: css`
       max-width: 1160px; 
     `,
-  xl: css`
+    xl: css`
       max-width: 1222px;
     `,
-})}
-`
+  })}
+
+  ${propToStyle('marginTop')}
+
+`;
 const Row = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-right: -16px;
   margin-left: -16px;
-`
+`;
 
 const Col = styled.div`
   padding-right: 16px;
@@ -48,7 +52,7 @@ const Col = styled.div`
         flex-shrink: 0;
         flex-basis: ${(100 * value) / 12}%;
         max-width: ${(100 * value) / 12}%;
-      `
+      `;
     }
     return breakpointsMedia({
       xs: value?.xs
@@ -92,7 +96,7 @@ const Col = styled.div`
     if (typeof offset === 'number') {
       return css`
         margin-left: ${(100 * offset) / 12}%;
-      `
+      `;
     }
     return breakpointsMedia({
       xs: offset?.xs
@@ -126,8 +130,15 @@ const Col = styled.div`
         : '',
     });
   }}
-`
+ 
+ ${propToStyle('display')}
+ ${propToStyle('alignItems')}
+ ${propToStyle('justifyContent')}
+ ${propToStyle('flexDirection')}
 
+`;
+
+// eslint-disable-next-line import/prefer-default-export
 export const Grid = {
   Container,
   Row,

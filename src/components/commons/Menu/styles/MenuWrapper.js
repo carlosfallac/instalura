@@ -1,7 +1,8 @@
-import styled, { css } from 'styled-components'
-import { breakpointsMedia } from '../../../../theme/utils/breakpointsMedia'
-import { TextStyleVariants } from '../../../foundation/Text'
+import styled, { css } from 'styled-components';
+import breakpointsMedia from '../../../../theme/utils/breakpointsMedia';
+import { TextStyleVariants } from '../../../foundation/Text';
 
+// eslint-disable-next-line import/prefer-default-export
 export const MenuWrapper = styled.nav`
   font-family: 'Rubik', sans-serif;
   display: flex;
@@ -28,7 +29,7 @@ export const MenuWrapper = styled.nav`
       max-width: 1222px;
     `,
   })}
-`
+`;
 
 MenuWrapper.LeftSide = styled.div`
   padding: 0;
@@ -43,10 +44,13 @@ MenuWrapper.LeftSide = styled.div`
   ${breakpointsMedia({
     md: css`
       order: initial;
-      padding-right: 16px;
+      margin-right: 16px;
+    `,
+    xs: css`
+      margin-right: 49px;
     `,
   })}
-`
+`;
 
 MenuWrapper.CenterSide = styled.div`
   padding: 0;
@@ -76,24 +80,24 @@ MenuWrapper.CenterSide = styled.div`
     a {
       text-align: center;
       display: block;
-      text-decoration: nome;
+      text-decoration: none;
       color: #88989E;
       transition: 200ms ease-in-out;
-      ${breakpointsMedia({
-        xs: css`
+    ${breakpointsMedia({
+    xs: css`
           ${TextStyleVariants.smallestException}
         `,
-        md: css`
+    md: css`
           ${TextStyleVariants.paragraph1}
         `,
-      })}
+  })}
       &:hover,
       &:focus {
         font-weight: 500;
         color: #070C0E;
     }
   }
-`
+`;
 
 MenuWrapper.RightSide = styled.div`
   padding: 0;
@@ -107,4 +111,4 @@ MenuWrapper.RightSide = styled.div`
       order: initial;
     `,
   })}
-`
+`;
